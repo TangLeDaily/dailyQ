@@ -1,6 +1,6 @@
 <template>
   <nav style="background-color: white">
-      <div style="width:100%; overflow: hidden">
+    <div style="width:100%;z-index: 2;top: 0;background-color: white; overflow: hidden">
         <span style="float:left;padding-top:0px;margin-left:1%">
            <el-button icon="el-icon-s-unfold" @click="showleft" ></el-button>
 <!--          <el-button type="primary" icon="el-icon-edit"></el-button>-->
@@ -22,9 +22,13 @@
         <el-col >
           <div>
             <el-menu default-active="1" class="el-menu-vertical-demo" style="min-height:800px">
-              <el-menu-item index="1"><i class="el-icon-message"></i></el-menu-item>
-              <el-menu-item index="2"><i class="el-icon-menu"></i></el-menu-item>
-              <el-menu-item index="3"><i class="el-icon-setting"></i></el-menu-item>
+              <el-menu-item index="1">
+                <div >
+                  <i class="el-icon-notebook-2"></i>
+                </div>
+              </el-menu-item>
+              <el-menu-item index="2"><i class="el-icon-notebook-1"></i></el-menu-item>
+              <el-menu-item index="3"><i class="el-icon-chat-line-round"></i></el-menu-item>
             </el-menu>
           </div>
         </el-col>
@@ -123,7 +127,7 @@ export default {
   color: #fff
   top: 0rem
   .header-left
-    width: .64rem
+    width: -1rem
     float: left
   .header-input
     flex: 1
