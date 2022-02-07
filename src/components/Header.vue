@@ -1,9 +1,8 @@
 <template>
   <nav style="background-color: white">
-    <div style="width:100%;z-index: 2;top: 0;background-color: white; overflow: hidden">
+    <div style="width:100%;z-index: 2;top: 0;background-color: white; overflow: hidden; position: fixed">
         <span style="float:left;padding-top:0px;margin-left:1%">
            <el-button icon="el-icon-s-unfold" @click="showleft" ></el-button>
-<!--          <el-button type="primary" icon="el-icon-edit"></el-button>-->
         </span>
         <span  style="float:left;padding-top:0.5rem;margin-left:1%">
             DailySpace
@@ -12,29 +11,9 @@
 
         </span>
         <span style="float:right;padding-top:0px;margin-right:1%">
-            <el-button icon="el-icon-s-unfold" ></el-button>
+            <el-button icon="el-icon-s-unfold" @click="showright"></el-button>
         </span>
     </div>
-    <div v-if="showModal" @click="overRL" class="mask">
-    </div>
-    <div style="margin-top:0px;margin-left: 0px;background-color: blue" class="rMenu" :class="{active:leftShow}">
-      <el-row :gutter="20">
-        <el-col >
-          <div>
-            <el-menu default-active="1" class="el-menu-vertical-demo" style="min-height:800px">
-              <el-menu-item index="1">
-                <div >
-                  <i class="el-icon-notebook-2"></i>
-                </div>
-              </el-menu-item>
-              <el-menu-item index="2"><i class="el-icon-notebook-1"></i></el-menu-item>
-              <el-menu-item index="3"><i class="el-icon-chat-line-round"></i></el-menu-item>
-            </el-menu>
-          </div>
-        </el-col>
-      </el-row>
-    </div>
-
   </nav>
 
 </template>
@@ -53,12 +32,11 @@ export default {
       this.leftShow=true,
       this.showModal=true
     },
-    overRL(){
+    showright(){
       this.leftShow=false,
       this.showModal=false
     }
   },
-
 }
 
 
@@ -70,14 +48,15 @@ export default {
   box-sizing: border-box;
 }
 .mask {
-  background-color:white; /*lightgray;*/
-  opacity: 0;
+  background-color:gray; /*lightgray;*/
+  opacity: 50%;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1
+  z-index: 1;
+  overflow:hidden
 }
 .page{
   width: 100vw;
